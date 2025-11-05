@@ -1,0 +1,139 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Sage green inspired color palette */
+    --background: 0 0% 100%;
+    --foreground: 84 15% 20%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 84 15% 20%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 84 15% 20%;
+
+    /* Sage green primary - calming and natural */
+    --primary: 84 17% 61%;
+    --primary-foreground: 84 15% 20%;
+    --primary-glow: 84 20% 75%;
+
+    /* Earthy secondary tones */
+    --secondary: 40 25% 92%;
+    --secondary-foreground: 84 15% 20%;
+
+    --muted: 84 10% 95%;
+    --muted-foreground: 84 8% 45%;
+
+    /* Warm accent */
+    --accent: 40 60% 88%;
+    --accent-foreground: 40 50% 25%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 84 12% 88%;
+    --input: 84 12% 88%;
+    --ring: 84 17% 61%;
+
+    --radius: 0.75rem;
+
+    /* Gradients for hero and sections */
+    --gradient-hero: linear-gradient(135deg, hsl(84 17% 61%), hsl(100 20% 55%));
+    --gradient-feature: linear-gradient(180deg, hsl(0 0% 100%), hsl(84 10% 98%));
+    
+    /* Shadows with soft natural glow */
+    --shadow-soft: 0 4px 20px -4px hsl(84 17% 61% / 0.15);
+    --shadow-elevated: 0 12px 40px -8px hsl(84 17% 61% / 0.25);
+    
+    /* Smooth transitions */
+    --transition-base: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 84 15% 20%;
+    --sidebar-primary: 84 17% 61%;
+    --sidebar-primary-foreground: 84 15% 20%;
+    --sidebar-accent: 84 10% 95%;
+    --sidebar-accent-foreground: 84 15% 20%;
+    --sidebar-border: 84 12% 88%;
+    --sidebar-ring: 84 17% 61%;
+  }
+
+  .dark {
+    --background: 84 18% 8%;
+    --foreground: 84 10% 95%;
+
+    --card: 84 16% 12%;
+    --card-foreground: 84 10% 95%;
+
+    --popover: 84 16% 12%;
+    --popover-foreground: 84 10% 95%;
+
+    --primary: 84 20% 65%;
+    --primary-foreground: 84 18% 8%;
+    --primary-glow: 84 25% 75%;
+
+    --secondary: 84 12% 18%;
+    --secondary-foreground: 84 10% 95%;
+
+    --muted: 84 12% 18%;
+    --muted-foreground: 84 10% 65%;
+
+    --accent: 40 50% 20%;
+    --accent-foreground: 40 60% 88%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 84 12% 22%;
+    --input: 84 12% 22%;
+    --ring: 84 20% 65%;
+    
+    --gradient-hero: linear-gradient(135deg, hsl(84 20% 55%), hsl(100 25% 45%));
+    --gradient-feature: linear-gradient(180deg, hsl(84 16% 12%), hsl(84 18% 10%));
+    
+    --shadow-soft: 0 4px 20px -4px hsl(0 0% 0% / 0.4);
+    --shadow-elevated: 0 12px 40px -8px hsl(0 0% 0% / 0.6);
+
+    --sidebar-background: 84 18% 8%;
+    --sidebar-foreground: 84 10% 95%;
+    --sidebar-primary: 84 20% 65%;
+    --sidebar-primary-foreground: 84 18% 8%;
+    --sidebar-accent: 84 12% 18%;
+    --sidebar-accent-foreground: 84 10% 95%;
+    --sidebar-border: 84 12% 22%;
+    --sidebar-ring: 84 20% 65%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@layer utilities {
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-fade-in {
+    animation: fade-in 1s ease-out forwards;
+  }
+}
