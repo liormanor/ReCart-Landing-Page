@@ -10,10 +10,14 @@ export default defineConfig(({ mode }) => ({
     port: 8080,
   },
   plugins: [react(), mode === "development" && componentTagger()].filter(Boolean),
-  base: '/pages/sthota38/ReCart-Landing-Page/', 
+  
+  // ✅ Correct base path for GitHub Pages
+  base: "/ReCart-Landing-Page/",
+
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
     },
   },
 }));
+
